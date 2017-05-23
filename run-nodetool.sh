@@ -6,7 +6,7 @@ FILE_LOCK='/tmp/repair.lock'
 
 logit () {
 	log_date=`date +"%F %T"`
-	echo "[$log_date] $1" >> $LOG_FILE
+	echo "[$log_date] $1"
 }
 
 die () {

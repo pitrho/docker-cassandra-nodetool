@@ -71,8 +71,7 @@ echo "CASSANDRA_CONFIG=${CASSANDRA_CONFIG}" > $CRON_FILE
 echo "CASSANDRA_USE_JMX_SSL=${CASSANDRA_USE_JMX_SSL}" >> $CRON_FILE
 echo "NODETOOL_COMMAND='${NODETOOL_COMMAND}'" >> $CRON_FILE
 echo "NODETOOL_COMMAND_OPTIONS='${NODETOOL_COMMAND_OPTIONS}'" >> $CRON_FILE
-echo "LOG_FILE=${LOG_FILE}" >> $CRON_FILE
-echo "${CRON_SCHEDULE} root /etc/service/nodetool/run-nodetool.sh >> ${LOG_FILE} 2>&1" >> $CRON_FILE
+echo "${CRON_SCHEDULE} root /usr/bin/stdbuf -o0 -e0 /etc/service/nodetool/run-nodetool.sh >> ${LOG_FILE} 2>&1" >> $CRON_FILE
 
 
 # Create the log output file (PIPE) if it does not exist
